@@ -1,0 +1,61 @@
+$def with (table,url)
+<html>
+<body>
+
+<fieldset>
+    <legend>Video List</legend>
+    <table border="1" align="center">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Upload Time</th>
+            <th>Rate</th>
+            <th>Describe</th>
+            <th>FLV file</th>
+            <th>HD file</th>
+            <th>count</th>
+            <th>bucket</th>
+            <th>Play</th>
+            <th>Play HD</th>
+            <th>Delete</th>
+            <th>Rate Now!</th>
+        </tr>
+        $for rec in table:
+            <tr id=$rec[0]>
+                $for i in range(len(rec)):
+                        $if i == 3:
+                                $ b = float('%0.2f' % rec[3])
+                                <td id=3>$b</td>
+                        $else:
+                                <td id=$i>$rec[i]</td>
+
+                <td><a href="./video/$rec[5]">Play</a></td>
+                <td><a href="./video/$rec[6]">Play</a></td>
+                <td><a href="./del/$rec[5]">Delete</a></td>
+                <td>
+                    <form name="input"  action="/rate/$rec[5]" method="post">
+                        <input type="radio" name="rate" value="1" /> 1
+
+                        <input type="radio" name="rate" value="2" /> 2
+
+                        <input type="radio" name="rate" value="3" /> 3
+
+                        <input type="radio" name="rate" value="4" /> 4
+
+                        <input type="radio" name="rate" value="5" /> 5
+
+                        <input type="submit" value="Rate it!" />
+                    </form>
+                </td>
+            </tr>
+    </table>
+</fieldset>
+
+
+<a href="./sort">Main</a>
+<a href="./upload">Upload</a>
+
+
+
+</body>
+</html>

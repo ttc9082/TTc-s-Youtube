@@ -1,0 +1,41 @@
+$def with (url,urld,name,des,rate)
+$if 1:
+        My Youtube!     <a href="$urld">Click here to Download this video!</a>
+$else:
+        shit
+<html>
+<head>
+    <title>Video Lucky</title>
+</head>
+<body>
+<script type="text/javascript" src="../static/jwplayer/jwplayer.js"></script>
+
+<div id="myElement">Loading the player...</div>
+
+<script type="text/javascript">
+    jwplayer("myElement").setup({
+        file: "$urld",
+        image: "../static/uploads/1.png"
+    });
+</script>
+
+
+<table border="1">
+    <tr>
+        <th>Name: </th>
+        <td>$name</td>
+    </tr>
+    <tr>
+        <th>Description: </th>
+        <td>$des</td>
+    </tr>
+    <tr>
+        <th>Rate</th>
+        <td>$rate</td>
+    </tr>
+</table>
+
+<a href="../sort">Main</a>
+
+</body>
+</html>

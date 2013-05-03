@@ -1,0 +1,13 @@
+$def with (buckets)
+
+<html>
+<body>
+    <form>
+        <select name="bucket">
+        $for i in range(len(buckets)):
+            <option id=i value=$buckets[i]>$buckets[i]</option>
+        </select>
+            <input type="submit" value="Choose!" />
+    </form>
+</body>
+</html>

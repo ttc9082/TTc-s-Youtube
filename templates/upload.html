@@ -1,0 +1,43 @@
+$def with (buckets)
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+<form method="POST" enctype="multipart/form-data" action="">
+
+    <input type="file" name="video" />
+
+    <br/>
+    <input type="text" name="videoName" />
+
+    <br/>
+
+    <textarea id="edtInputWord" name ="videoDes" rows="10" cols="20">
+    Please input your description here!
+    </textarea>
+
+    <br/>
+
+        <select name="bucket">
+
+        $for i in range(len(buckets)):
+            <option id=i value=$buckets[i].name>$buckets[i]</option>
+        </select>
+
+    <br/>
+    <input type="submit" value="Upload!"/>
+</form>
+        <form method="post" action="/add">
+            <p><input type="text" name="name" />
+                <input type="checkbox" name="front" />CloudFront
+                <input type="submit" value="Create a NEW Bucket!" /></p>
+        </form>
+<br/>
+<a href="./sort">Main</a>
+</body>
+
+</html>

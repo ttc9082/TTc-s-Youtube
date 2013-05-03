@@ -1,0 +1,19 @@
+$def with (table)
+    <tr>
+        <th>Rate</th>
+        <td>$rate</td>
+    </tr>
+                    <form name="input"  action="/rate/$rec[5]" method="post">
+                        <input type="radio" name="rate" value="1" /> 1
+
+                        <input type="radio" name="rate" value="2" /> 2
+
+                        <input type="radio" name="rate" value="3" /> 3
+
+                        <input type="radio" name="rate" value="4" /> 4
+
+                        <input type="radio" name="rate" value="5" /> 5
+
+                        <input type="submit" value="Rate it!" />
+                    </form>
+</table>
