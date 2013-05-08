@@ -4,3 +4,4 @@
 tool/config.py
 
 *.pyc
+.DS_Store
